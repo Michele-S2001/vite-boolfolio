@@ -17,7 +17,7 @@ export default {
   },
 
   methods: {
-    fetchProjects(pageNum) {
+    fetchProjects() {
       axios
         .get(`${this.BASE_URL}/projects`, {
           params: {
