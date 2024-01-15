@@ -22,6 +22,11 @@ export default {
         <span class="tag prefix">Type</span>&#8594;<span class="tag type__name">{{ project.type.name }}</span>
       </div>
     </div>
+    <div class="card-project__footer">
+      <div class="info">
+        <a href="#">More</a>
+      </div>
+    </div>
   </div>
 
 </template>
@@ -33,6 +38,13 @@ export default {
     border-top: 4px solid $blue;
     border-radius: 4px;
     padding: 20px;
+    user-select: none;
+
+    &:hover {
+      .info {
+        opacity: 1;
+      }
+    }
 
     &__header {
       margin-bottom: 20px;
@@ -44,6 +56,7 @@ export default {
     }
 
     &__body {
+      margin-bottom: 20px;
       .type {
         text-align: center;
         .tag {
@@ -63,6 +76,16 @@ export default {
             border: 3px solid $salmon;
           }
         }
+      }
+    }
+
+    &__footer {
+      .info {
+        text-align: center;
+        color: $darkBlue;
+        font-weight: 700;
+        opacity: 0;
+        transition: 0.2s ease-in-out;
       }
     }
   }
