@@ -16,6 +16,11 @@
           .then((res) => {
             this.project = res.data.project;
           })
+          .catch((error) => {
+            if (error.response.status === 404) {
+              this.$router.push({ name: 'not-found' });
+            }
+          })
       }
     },
 
