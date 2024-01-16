@@ -9,10 +9,10 @@ export default {
     <div class="container">
       <ul class="nav-links">
         <li>
-          <router-link :to="{ name: 'home' }" class="nav-link">Home</router-link>
+          <router-link :to="{ name: 'home' }" class="nav-link" :class="{ 'active' : $route.path === '/' }">Home</router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'projects.index' }" class="nav-link">My works</router-link>
+          <router-link :to="{ name: 'projects.index' }" class="nav-link" :class="{ 'active' : $route.path === '/projects' }">My works</router-link>
         </li>
       </ul>
     </div>
@@ -31,6 +31,13 @@ export default {
       gap: 20px;
       *.nav-link {
         line-height: 30px;
+        padding: 0 10px;
+        border-radius: 8pc;
+
+        &.active {
+          background-color: $black;
+          color: $white;
+        }
       }
     }
   }

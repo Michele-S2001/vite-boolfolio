@@ -21,7 +21,6 @@
 
     created() {
       this.fetchProject();
-      console.log(this);
     }
   }
 </script>
