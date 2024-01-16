@@ -12,10 +12,21 @@
   margin: 0 auto;
 }
 
+ul,
+ol,
+menu {
+  list-style: none;
+}
+
 a {
   display: inline-block;
   text-decoration: none;
   color: currentColor;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 /**
