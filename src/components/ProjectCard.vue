@@ -24,7 +24,7 @@ export default {
     </div>
     <div class="card-project__footer">
       <div class="info">
-        <a href="#">More</a>
+        <router-link :to="{ name: 'projects.show', params: { slug: project.slug }}">More</router-link>
       </div>
     </div>
   </div>
