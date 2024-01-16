@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       BASE_URL: 'http://127.0.0.1:8000/api',
-      projects: [],
+      projects: null,
       currPageNumber: 1,
       maxNumberOfPages: -1
     }
@@ -47,7 +47,9 @@ export default {
   <section class="projects section">
     <div class="container">
       <h1 class="main-title">Tutti i miei progetti</h1>
-      <div class="page-numbers">
+
+      <!-- menu di paginazione (molto semplice) -->
+      <div v-if="projects"  class="page-numbers">
         <div 
           class="page-number" 
           :class="{ 'active-page': currPageNumber === n }"
@@ -57,11 +59,15 @@ export default {
           {{ n }}
         </div>
       </div>
-      <div class="projects__inner">
 
-        <!-- card dei progetti -->
+      <!-- card dei progetti -->
+      <div v-if="projects" class="projects__inner">
         <ProjectCard :project="project" v-for="project in projects" :key="project.id" />
-
+      </div>
+      
+      <!-- Loader per l'attesa della risposta dal server -->
+      <div v-else class="loader">
+        <img src="/img/Double-Ring-1s-200px.gif" alt="Loading">
       </div>
     </div>
   </section>
@@ -100,6 +106,14 @@ export default {
 
   .active-page {
     color: $black;
+  }
+
+  .loader {
+    display: flex;
+    justify-content: center;
+    & img {
+      max-width: 100px;
+    }
   }
 
 </style>
