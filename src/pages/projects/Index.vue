@@ -32,6 +32,11 @@ export default {
 
     changePage(index) {
       this.currPageNumber = index;
+    }
+  },
+
+  watch: {
+    currPageNumber() {
       this.fetchProjects();
     }
   },
