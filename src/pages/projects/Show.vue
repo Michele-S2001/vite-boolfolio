@@ -41,11 +41,11 @@
         <h1 class="title">{{ project.title }}</h1>
         <!-- <span>{{ project }}</span> -->
         <ul class="technologies">
-          <li v-for="tech in project.technologies">
+          <li v-for="tech in project.technologies" :key="tech.id" class="technology">
             {{ tech.slug }}
           </li>
         </ul>
-        <strong class="type">{{ project.type.name }}</strong>
+        <div class="type">{{ project.type.name }}</div>
         <p class="description">
           {{ project.description }}
         </p>
@@ -55,13 +55,17 @@
 </template>
 
 <style lang="scss" scoped>
+@use '../../style/partials/variables' as *;
+@use '../../style/partials/mixins' as *;
 
   .project-details {
-    padding-top: 50px;
+    padding: 50px 20px;
 
     &__inner {
       .title {
         margin-bottom: 30px;
+        font-size: clamp(30px, 5vw, 40px);
+        letter-spacing: 5px;
         &::first-letter {
           text-transform: uppercase;
         }
@@ -71,10 +75,20 @@
         gap: 20px;
         flex-wrap: wrap;
         margin-bottom: 20px;
+
+        .technology {
+          @include badge($orange, $black);
+        }
+      }
+
+      .type {
+        display: inline-block;
+        @include badge($darkBlue, $white);
       }
 
       .description {
         padding: 50px 0;
+        font-size: 20px;
       }
     }
   }
