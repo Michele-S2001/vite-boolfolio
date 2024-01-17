@@ -3,6 +3,10 @@
   import axios from 'axios';
 
   export default {
+    props: {
+      slug: String
+    },
+
     data() {
       return {
         project: null
@@ -12,7 +16,7 @@
     methods: {
       fetchProject() {
         axios
-          .get(`${store.BASE_URL}/projects/${this.$route.params.slug}`)
+          .get(`${store.BASE_URL}/projects/${this.slug}`)
           .then((res) => {
             this.project = res.data.project;
           })
@@ -58,6 +62,9 @@
     &__inner {
       .title {
         margin-bottom: 30px;
+        &::first-letter {
+          text-transform: uppercase;
+        }
       }
       .technologies {
         display: flex;
