@@ -14,6 +14,9 @@ export default {
         <li>
           <router-link :to="{ name: 'projects.index' }" class="nav-link" :class="{ 'active' : $route.path === '/projects' }">My works</router-link>
         </li>
+        <li>
+          <router-link :to="{ name: 'contacts' }" class="nav-link" :class="{ 'active' : $route.path === '/contacts' }">Contacts</router-link>
+        </li>
       </ul>
     </div>
   </header>
