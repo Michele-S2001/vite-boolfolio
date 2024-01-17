@@ -2,7 +2,8 @@
   <div class="error">
     <div class="container">
       <div class="error__inner">
-        <h1>Pagina che cerchi non è questa !!</h1>
+        <img src="/img/not-found.gif" alt="not found John Travolta gif">
+        <h1>Pagina non trovata! ERROR:404</h1>
       </div>
     </div>
   </div>
@@ -10,11 +11,17 @@
 
 <style lang="scss" scoped>
 
-  .error {
-    padding: 40px 0;
+  .error__inner {
+    padding: 40px 10px;
     display: flex;
+    flex-direction: column;
+    gap: 40px;
     justify-content: center;
     align-items: center;
     min-height: 100%;
+
+    h1 { 
+      font-size: clamp(26px, 3vw, 36px);
+    }
   }
 </style>
