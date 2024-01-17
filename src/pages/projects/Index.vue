@@ -37,6 +37,7 @@ export default {
 
   watch: {
     currPageNumber() {
+      this.projects = [];
       this.fetchProjects();
     }
   },
@@ -54,7 +55,7 @@ export default {
       <h1 class="main-title">Tutti i miei progetti</h1>
 
       <!-- menu di paginazione (molto semplice) -->
-      <div v-if="projects"  class="page-numbers">
+      <div v-if="projects" class="page-numbers">
         <div 
           class="page-number" 
           :class="{ 'active-page': currPageNumber === n }"
