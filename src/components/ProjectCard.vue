@@ -15,11 +15,11 @@ export default {
 
   <div class="card card-project">
     <div class="card-project__header">
-      <h4 class="title">{{ project.title }}</h4>
+      <p class="title">{{ project.title }}</p>
     </div>
     <div class="card-project__body">
       <div class="type">
-        <span class="tag prefix">Type</span>&#8594;<span class="tag type__name">{{ project.type.name }}</span>
+        <span class="tag type__name">{{ project.type.name }}</span>
       </div>
     </div>
     <div class="card-project__footer">
@@ -34,10 +34,11 @@ export default {
 <style lang="scss" scoped>
 @use '../style/partials/variables' as *;
   .card-project {
-    box-shadow: 2px 7px 16px 0px rgba($grey, $alpha: 0.5);
-    border-top: 4px solid $blue;
+    box-shadow: 1px 4px 15px 0px #000000;
+    background: linear-gradient(45deg, $darkerBlue 17%, hsla(211, 33%, 35%, 1) 100%);
+    color: $darkerBlue;
     border-radius: 4px;
-    padding: 20px;
+    padding: 20px 0;
     user-select: none;
 
     &:hover {
@@ -49,9 +50,10 @@ export default {
     &__header {
       margin-bottom: 20px;
       .title {
+        background: linear-gradient(45deg, $gold-1 14%, $gold-2 100%);
         text-transform: capitalize;
-        padding-bottom: 1em;
-        border-bottom: 5px solid rgba($grey, $alpha: 0.7);
+        padding: 0 10px;
+        line-height: 30px;
       }
     }
 
@@ -65,15 +67,10 @@ export default {
           line-height: 30px;
           padding: 0 10px;
           border-radius: 20px;
-
-          &.prefix {
-            background-color: rgba($ocean, $alpha: 0.3);
-            border: 3px solid $ocean;
-          }
-
           &.type__name {
-            background-color: rgba($salmon, $alpha: 0.3);
-            border: 3px solid $salmon;
+            background-color: rgba($gold-1, $alpha: 0.3);
+            border: 3px solid $gold-2;
+            color: $gold-2;
           }
         }
       }
@@ -82,7 +79,7 @@ export default {
     &__footer {
       .info {
         text-align: center;
-        color: $darkBlue;
+        color: $gold-2;
         font-weight: 700;
         opacity: 0;
         transition: 0.2s ease-in-out;

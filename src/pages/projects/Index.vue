@@ -92,15 +92,14 @@ export default {
       margin-bottom: 30px;
       cursor: pointer;
       font-weight: 700;
-      background-color: rgba($orange, $alpha: 0.8);
-      color: $white;
+      background: linear-gradient(90deg, $gold-1 10%, $gold-2 100%);
+      color: $darkerBlue;
       border-radius: 10px;
     }
     .main-title {
       font-size: 2.4rem;
       text-align: center;
       margin-bottom: 50px;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
     &__inner {
@@ -111,7 +110,7 @@ export default {
   }
 
   .active-page {
-    color: $black;
+    color: $white;
   }
 
   .loader {
